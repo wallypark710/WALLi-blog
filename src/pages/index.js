@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const listStyle = {
-  color: "rgb(9,92,23)",
+  color: "rgb(18, 23, 29)",
   textDecoration: "none",
 }
 
