@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 
 const listStyle = {
   color: "rgb(9,92,23)",
-  textDecorationLine: "none",
+  textDecoration: "none",
 }
 
 const IndexPage = props => {
