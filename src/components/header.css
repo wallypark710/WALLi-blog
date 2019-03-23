@@ -1,0 +1,14 @@
+.navBox {
+  display: inline-flex;
+}
+
+.navList {
+  margin-top: 20px;
+  margin-right: 30px;
+}
+
+.navEntry {
+  color: white;
+  font-size: 30px;
+  text-shadow: 1.5px 1.5px #ff0000;
+}

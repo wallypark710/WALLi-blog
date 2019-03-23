@@ -1,21 +1,68 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
+import "./post.css"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const listStyle = {
+  color: "rgb(9,92,23)",
+  textDecorationLine: "none",
+}
+
+const IndexPage = props => {
+  const postList = props.data.allMarkdownRemark
+  return (
+    <Layout>
+      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+
+      <div className="mainPage">
+        {postList.edges.map(({ node }, i) => (
+          <Link
+            to={node.fields.slug}
+            className="link"
+            style={listStyle}
+            key={node.frontmatter.title.toString()}
+          >
+            <div className="post-list">
+              <h1 style={{ marginBottom: 10 }}>{node.frontmatter.title}</h1>
+              <p style={{ marginBottom: 15, fontFamily: "Helvetica" }}>
+                {node.frontmatter.date}
+              </p>
+              <p
+                style={{
+                  fontSize: 20,
+                  fontFamily: "Helvetica",
+                  fontWeight: "bold",
+                }}
+              >
+                {node.excerpt}
+              </p>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </Layout>
+  )
+}
 
 export default IndexPage
+
+export const listQuery = graphql`
+  query ListQuery {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          excerpt(pruneLength: 100)
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+          }
+        }
+      }
+    }
+  }
+`
