@@ -55,6 +55,17 @@ const Header = ({ siteTitle }) => (
 
         <div className="navList">
           <Link
+            to="https://github.com/wallypark710"
+            style={{
+              textDecoration: `none`,
+            }}
+          >
+            <h3 className="navEntry">GITHUB</h3>
+          </Link>
+        </div>
+
+        <div className="navList">
+          <Link
             to="/til/"
             style={{
               textDecoration: `none`,
