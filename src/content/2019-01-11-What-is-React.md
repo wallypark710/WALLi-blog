@@ -1,7 +1,8 @@
 ---
 title: "[React] What is React"
-description: What is React
 date: "2019-01-11"
+draft: false
+path: "/blog/2019-01-11-what-is-react"
 ---
 
 > React는 컴포넌트라는 개념에 집중이 되어있는 자바스크립트 라이브러리이다.

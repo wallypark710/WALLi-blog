@@ -1,8 +1,9 @@
 ---
 title: "[React] 'this' binding of the callback function"
-description: this binding of the callback function
+
 date: "2019-01-22"
-image: ""
+draft: false
+path: "/blog/2019-01-22-this-binding"
 ---
 
 리액트에서는 props 와 state라는 속성이 있다. props는 부모 컴포넌트로 부터 받아오는 값이며, 이 값을 직접 수정할 수 없다. 리액트의 `state` 일반 자바스크립트의 객체와 동일하게 다뤄서는 안된다. state는 독립적인 컴포넌트의 상태이며 state 값을 바꿀때는 절대로 직접 수정해서는 안되고, `setState` 메서드를 이용해야 한다.

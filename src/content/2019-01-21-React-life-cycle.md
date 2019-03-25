@@ -1,8 +1,8 @@
 ---
 title: "[React] Life Cycle"
-description: React Life Cycle
 date: "2019-01-21"
-image: ""
+draft: false
+path: "/blog/2019-01-11-react-life-cycle"
 ---
 
 ## Intro

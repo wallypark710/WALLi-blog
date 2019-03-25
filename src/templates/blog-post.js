@@ -1,29 +1,52 @@
 import React from "react"
-import Layout from "../components/layout"
 import { graphql } from "gatsby"
+import styled from "@emotion/styled"
+import Layout from "../components/layout"
 
-function BlogPost(props) {
-  const post = props.data.markdownRemark
-  const { title } = post.frontmatter
+const Content = styled.div`
+  margin: 0 auto;
+  max-width: 860px;
+  padding: 1.45rem 1.0875rem;
+`
+
+const MarkedHeader = styled.h1`
+  display: inline;
+  border-radius: 1em 0 1em 0;
+`
+
+const HeaderDate = styled.h3`
+  margin-top: 10px;
+  color: #bbb;
+`
+
+export default ({ data }) => {
+  const post = data.markdownRemark
   return (
     <Layout>
-      <div>
-        <h1>{title}</h1>
+      <Content>
+        <MarkedHeader>{post.frontmatter.title}</MarkedHeader>
+        <HeaderDate>
+          {post.frontmatter.date} - {post.fields.readingTime.text}
+        </HeaderDate>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
+      </Content>
     </Layout>
   )
 }
 
-export default BlogPost
-
-export const query = graphql`
-  query PostQuery($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+export const pageQuery = graphql`
+  query($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
+        date(formatString: "DD MMMM, YYYY")
+        path
         title
-        description
+      }
+      fields {
+        readingTime {
+          text
+        }
       }
     }
   }

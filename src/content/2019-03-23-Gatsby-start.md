@@ -1,21 +1,17 @@
 ---
 title: "[Blog] Start a blog with Gatsby and Netlify"
-description: Start a blog with Gatsby and Netlify
 date: "2019-03-23"
-image: ""
+draft: false
+path: "/blog/2019-03-23-gatsby-start"
 ---
-
-
 
 ## Intro
 
-기존에 Jekyll 과 github page를 이용해서 블로그를 하고 있었다. Jekyll은 정적 웹사이트를 만들어주는 generator인데, 마크다운 형태로 작성된 소스를 빌드하여 HTML로 만들어주는 툴이다. 커스텀이 매우 자유로웠지만, 내가 잘 모르는  Ruby로 되어있어서 누군가가 만들어논 틀을 살짝 살짝 수정하는 정도였다.
+기존에 Jekyll 과 github page를 이용해서 블로그를 하고 있었다. Jekyll은 정적 웹사이트를 만들어주는 generator인데, 마크다운 형태로 작성된 소스를 빌드하여 HTML로 만들어주는 툴이다. 커스텀이 매우 자유로웠지만, 내가 잘 모르는 Ruby로 되어있어서 누군가가 만들어논 틀을 살짝 살짝 수정하는 정도였다.
 
 그러던 중 Gatsby라는것을 알게 되었다. Facebook에서 만든 정적 사이트 생성기이다. 이제 살짝 둘러본 정도라 어떻게 돌아가는지 세세히 알지는 못하지만, 리액트로 되어었다는 부분이 매우 매력적이었다. 요즘 한창 리액트를 다루고 있던터라 더욱 반가웠다.
 
 간단하게 사용해본 소감은… 좋다. 엄청 빠르다. 친숙하게 모든것을 커스텀 할 수 있어서 좋다. 추가적인 모듈을 설치할 때도 npm을 이용해서 간편하게 설치할 수 있다.
-
-
 
 ### Start Gatsby
 
@@ -27,15 +23,11 @@ image: ""
 $ npm install -g gatsby-cli
 ```
 
-
-
 #### Create a new site
 
 ```bash
 $ gatsby new <YOUR_BLOG_NAME>
 ```
-
-
 
 #### Start development server
 
@@ -44,11 +36,9 @@ $ cd <YOUR_BLOG_NAME>
 $ gatsby develop
 ```
 
-이 작업까지 끝났다면 `localhost:8000` 으로 접속하면 만들어진 블로그의 모습을 볼 수 있다.  `src` 부분을 수정해서 자기만의 블로그를 만들면 된다.
+이 작업까지 끝났다면 `localhost:8000` 으로 접속하면 만들어진 블로그의 모습을 볼 수 있다. `src` 부분을 수정해서 자기만의 블로그를 만들면 된다.
 
 어느정도 기본적인 틀이 만들어졌다면 배포를 해보자
-
-
 
 ### Start Netlify
 
