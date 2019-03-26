@@ -2,13 +2,16 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
+import logo from "../images/background.jpg"
+import logo2 from "../images/switch.jpg"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const Content = styled.div`
   margin: 0 auto;
-  max-width: 860px;
+  max-width: 1000px;
   padding: 1.45rem 1.0875rem;
 `
 
@@ -30,33 +33,47 @@ const ReadingTime = styled.h5`
   margin-bottom: 10px;
 `
 
+const gridContainer = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+  gridGap: "1.5rem",
+  margin: "2rem 0",
+}
+
 const IndexPage = ({ data }) => {
   const target = data.allMarkdownRemark.edges.filter(ele => {
-    return ele.node.frontmatter.category === "tech"
+    return ele.node.frontmatter.category === "life"
   })
+
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO title="Life-Blog" />
       <Content>
-        <h1>Blog</h1>
-        {target.map(({ node }) => (
-          <div key={node.id} style={{ margin: "70px auto" }}>
-            <Link
-              to={node.frontmatter.path}
-              css={css`
-                text-decoration: none;
-                color: inherit;
-              `}
-            >
-              <MarkerHeader>{node.frontmatter.title} </MarkerHeader>
-              <div>
-                <ArticleDate>{node.frontmatter.date}</ArticleDate>
-                <ReadingTime> - {node.fields.readingTime.text}</ReadingTime>
+        <h1>Life</h1>
+        <div style={gridContainer}>
+          {target.map(({ node }) => {
+            console.log(node.frontmatter)
+            return (
+              <div key={node.id}>
+                <Link
+                  to={node.frontmatter.path}
+                  css={css`
+                    text-decoration: none;
+                    color: inherit;
+                  `}
+                >
+                  <img src={logo} />
+                  <MarkerHeader>{node.frontmatter.title} </MarkerHeader>
+                  <div>
+                    <ArticleDate>{node.frontmatter.date}</ArticleDate>
+                    <ReadingTime> - {node.fields.readingTime.text}</ReadingTime>
+                  </div>
+                  <p>{node.excerpt}</p>
+                </Link>
               </div>
-              <p>{node.excerpt}</p>
-            </Link>
-          </div>
-        ))}
+            )
+          })}
+        </div>
       </Content>
     </Layout>
   )

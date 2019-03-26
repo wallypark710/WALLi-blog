@@ -17,6 +17,7 @@ const MarkedHeader = styled.h1`
 const HeaderDate = styled.h3`
   margin-top: 10px;
   color: #bbb;
+  font-size: 20px;
 `
 
 export default ({ data }) => {
@@ -42,6 +43,7 @@ export const pageQuery = graphql`
         date(formatString: "DD MMMM, YYYY")
         path
         title
+        category
       }
       fields {
         readingTime {

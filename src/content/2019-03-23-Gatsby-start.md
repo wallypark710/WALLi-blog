@@ -3,6 +3,7 @@ title: "[Blog] Start a blog with Gatsby and Netlify"
 date: "2019-03-23"
 draft: false
 path: "/blog/2019-03-23-gatsby-start"
+category: "tech"
 ---
 
 ## Intro

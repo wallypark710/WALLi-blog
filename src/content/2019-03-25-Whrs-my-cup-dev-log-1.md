@@ -3,6 +3,7 @@ title: "[Whr's my cup 개발기] 1.Start"
 date: "2019-03-25"
 draft: false
 path: "/blog/2019-03-25-Whrs-my-cup-dev-log-1"
+category: "tech"
 ---
 
 ## Intro

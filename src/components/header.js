@@ -12,12 +12,19 @@ const Content = styled.div`
 const HomeLink = styled(Link)`
   color: black;
   text-decoration: none;
+  margin: 0 20px;
 `
 
 const BlogLink = styled(Link)`
   color: black;
   text-decoration: none;
-  margin-left: 15px;
+  margin: 0 20px;
+`
+
+const SubLink = styled(Link)`
+  color: black;
+  text-decoration: none;
+  margin: 0 20px;
 `
 
 const SiteHeader = styled.header`
@@ -32,10 +39,18 @@ const Header = ({ siteTitle }) => (
     <Content>
       <p>
         <HomeLink to="/">Home</HomeLink>
+        <SubLink to="/blog">About</SubLink>
         <BlogLink to="/blog">Blog</BlogLink>
-        <BlogLink to="/blog">Github</BlogLink>
-        <BlogLink to="/blog">TIL</BlogLink>
-        <BlogLink to="/blog">Life</BlogLink>
+        <SubLink
+          to="/"
+          onClick={() =>
+            window.open("https://github.com/wallypark710", "__blank")
+          }
+        >
+          Github
+        </SubLink>
+        <SubLink to="/blog">TIL</SubLink>
+        <SubLink to="/life-blog">Life</SubLink>
       </p>
     </Content>
   </SiteHeader>

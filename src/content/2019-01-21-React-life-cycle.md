@@ -3,6 +3,7 @@ title: "[React] Life Cycle"
 date: "2019-01-21"
 draft: false
 path: "/blog/2019-01-11-react-life-cycle"
+category: "tech"
 ---
 
 ## Intro
