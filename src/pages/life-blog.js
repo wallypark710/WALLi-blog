@@ -62,7 +62,7 @@ const IndexPage = ({ data }) => {
                     color: inherit;
                   `}
                 >
-                  <img src={logo} />
+                  <Img fixed={node.frontmatter.img.childImageSharp.fixed} />
                   <MarkerHeader>{node.frontmatter.title} </MarkerHeader>
                   <div>
                     <ArticleDate>{node.frontmatter.date}</ArticleDate>
@@ -98,7 +98,13 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
             path
             category
-            img
+            img {
+              childImageSharp {
+                fixed(width: 243, height: 200) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
           fields {
             slug

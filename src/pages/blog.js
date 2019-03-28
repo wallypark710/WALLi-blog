@@ -81,7 +81,13 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
             path
             category
-            img
+            img {
+              childImageSharp {
+                fixed(width: 243, height: 200) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+            }
           }
           fields {
             slug

@@ -40,7 +40,13 @@ exports.createPages = ({ graphql, actions }) => {
             frontmatter {
               path
               category
-              img
+              img {
+                childImageSharp {
+                  fixed(width: 243, height: 200) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }
             }
             fields {
               slug
