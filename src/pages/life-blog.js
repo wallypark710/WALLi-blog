@@ -60,13 +60,20 @@ const IndexPage = ({ data }) => {
                     color: inherit;
                   `}
                 >
-                  <Img fluid={node.frontmatter.img.childImageSharp.fluid} />
-                  <MarkerHeader>{node.frontmatter.title} </MarkerHeader>
                   <div>
-                    <ArticleDate>{node.frontmatter.date}</ArticleDate>
-                    <ReadingTime> - {node.fields.readingTime.text}</ReadingTime>
+                    <Img fluid={node.frontmatter.img.childImageSharp.fluid} />
                   </div>
-                  <p>{node.excerpt}</p>
+                  <div style={{ marginTop: 10 }}>
+                    <MarkerHeader>{node.frontmatter.title} </MarkerHeader>
+                    <div>
+                      <ArticleDate>{node.frontmatter.date}</ArticleDate>
+                      <ReadingTime>
+                        {" "}
+                        - {node.fields.readingTime.text}
+                      </ReadingTime>
+                    </div>
+                    <p>{node.excerpt}</p>
+                  </div>
                 </Link>
               </div>
             )
