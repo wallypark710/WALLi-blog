@@ -2,8 +2,6 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
-import logo from "../images/background.jpg"
-import logo2 from "../images/switch.jpg"
 import Img from "gatsby-image"
 
 import Layout from "../components/layout"
@@ -62,7 +60,7 @@ const IndexPage = ({ data }) => {
                     color: inherit;
                   `}
                 >
-                  <Img fixed={node.frontmatter.img.childImageSharp.fixed} />
+                  <Img fluid={node.frontmatter.img.childImageSharp.fluid} />
                   <MarkerHeader>{node.frontmatter.title} </MarkerHeader>
                   <div>
                     <ArticleDate>{node.frontmatter.date}</ArticleDate>
@@ -100,8 +98,9 @@ export const query = graphql`
             category
             img {
               childImageSharp {
-                fixed(width: 243, height: 200) {
-                  ...GatsbyImageSharpFixed
+                fluid(maxWidth: 500, maxHeight: 300, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                  presentationWidth
                 }
               }
             }

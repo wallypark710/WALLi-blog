@@ -34,6 +34,7 @@ const IndexPage = ({ data }) => {
   const target = data.allMarkdownRemark.edges.filter(ele => {
     return ele.node.frontmatter.category === "tech"
   })
+
   return (
     <Layout>
       <SEO title="Blog" />
@@ -81,13 +82,6 @@ export const query = graphql`
             date(formatString: "DD MMMM, YYYY")
             path
             category
-            img {
-              childImageSharp {
-                fixed(width: 243, height: 200) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
-            }
           }
           fields {
             slug

@@ -40,7 +40,7 @@ const Header = ({ siteTitle }) => (
       <p>
         <HomeLink to="/">Home</HomeLink>
         <SubLink to="/blog">About</SubLink>
-        <BlogLink to="/blog">Blog</BlogLink>
+        <BlogLink to="/blog">Tech</BlogLink>
         <SubLink
           to="/"
           onClick={() =>
