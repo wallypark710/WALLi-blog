@@ -40,7 +40,7 @@ category: "tech"
 - 해당 cafe는 받은 피드백 태그가 그 카페의 특성을 나타낸다고 판단하고 학습키신다.
 - 유저간의 유사도와 카페와 유저간의 유사도를 측정하여 해당 유저가 중요하게 생각하는 요소를 지닌 카페를 추천한다
 
-![DB_Table](../images/DB_Table.png)
+![DB_Table](../images/DBTable.png)
 
 ### **Recommandation logic**
 
@@ -56,7 +56,7 @@ _User 1_ 은 `Space_L` 과 `Kindness` 를 선택했고, *User 2*는 이 두가�
 
 *User 1*가 선택한 태그는 이제 `Space_L`, `Kindness`, `Professional` 이 된다.
 
-![User-User](../images/User-User.png)
+![User-User](../images/UserUser.png)
 
 **4. 추천받은 태그를 포함하여, 이번에는 *User 1*이 선택한 태그를 강점으로 가지고 있는 카페를 찾는다. (유사도 측정)**
 
@@ -64,7 +64,7 @@ _User 1_ 은 `Space_L` 과 `Kindness` 를 선택했고, *User 2*는 이 두가�
 
 **5. *User 1*과 가장 유사도가 높은 카페를 추천카페로 지정한다.**
 
-![User-Cafe](../images/User-Cafe.png)
+
 
 이렇게 추천시스템을 구현해 보았다. User-base CF를 두 번 중첩해서 사용함으로써 사용자 개개인이 중요하게 생각하는 카페를 추천해 줄 수 있었다. 이렇게 구현한 추천 시스템은 상당히 만족스러운 추천 결과를 얻을 수 있었지만 cold start 이슈가 있다. cold start란 서비스 초기에 학습된 데이터가 부족하여 추천 정확도가 떨어지는것을 말한다. 이런 cold start 이슈를 최소화 하기위해 사용자에게는 가입시 중요하게 생각하는 요소를 미리 입력 받거나, 카페의 기본값을 설정하여 이런 cold start 이슈를 줄일 수 있을것이라 생각한다.
 
