@@ -26,7 +26,7 @@ category: "tech"
 
 사실 기능적인 구현보다, ios 사용자와 android사용자의 익숙한 UX가 다르기 때문에 이에대한 고민이 가장 컸다.
 
-## Collaborative Filtering ( recomender system)
+## Collaborative Filtering ( recomender system )
 
 ---
 
